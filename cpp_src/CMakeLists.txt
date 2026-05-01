@@ -76,6 +76,30 @@ add_custom_command(TARGET ResembleDebugV60 POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${DML_DIR}/bin/x64-win/DirectML.dll"
         $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/miniconda/Lib/site-packages/torch/lib/torch_cpu.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/miniconda/Lib/site-packages/torch/lib/c10.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/miniconda/Lib/site-packages/torch/lib/torch.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/miniconda/Lib/site-packages/torch/lib/libiomp5md.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/ffmpeg_dev/ffmpeg-master-latest-win64-gpl-shared/bin/avcodec-62.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/ffmpeg_dev/ffmpeg-master-latest-win64-gpl-shared/bin/avformat-62.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/ffmpeg_dev/ffmpeg-master-latest-win64-gpl-shared/bin/avutil-60.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "f:/antigravity/ffmpeg_dev/ffmpeg-master-latest-win64-gpl-shared/bin/swresample-6.dll"
+        $<TARGET_FILE_DIR:ResembleDebugV60>
     COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:ResembleDebugV60>/bin
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "f:/antigravity/cpp_src/bin/ffmpeg.exe"

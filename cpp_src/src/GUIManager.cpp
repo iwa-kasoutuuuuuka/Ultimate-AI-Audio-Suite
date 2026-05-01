@@ -55,6 +55,40 @@ void GUIManager::addLog(const std::string& msg) {
     std::lock_guard<std::mutex> lock(log_mutex);
     logs.push_back(msg);
 }
+
+static std::string openFileDialog() {
+    std::string result = "";
+    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    if (FAILED(hr) && hr != RPC_E_CHANGED_MODE) return "";
+
+    IFileOpenDialog *pFileOpen = nullptr;
+    hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL, IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
+    
+    if (SUCCEEDED(hr)) {
+        COMDLG_FILTERSPEC fileTypes[] = { { L"Audio Files", L"*.wav;*.mp3;*.flac;*.m4a" }, { L"All Files", L"*.*" } };
+        pFileOpen->SetFileTypes(2, fileTypes);
+        hr = pFileOpen->Show(NULL);
+        if (SUCCEEDED(hr)) {
+            IShellItem *pItem = nullptr;
+            if (SUCCEEDED(pFileOpen->GetResult(&pItem))) {
+                PWSTR pszFilePath = nullptr;
+                if (SUCCEEDED(pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath))) {
+                    int size = WideCharToMultiByte(CP_UTF8, 0, pszFilePath, -1, NULL, 0, NULL, NULL);
+                    result.resize(size - 1);
+                    WideCharToMultiByte(CP_UTF8, 0, pszFilePath, -1, &result[0], size, NULL, NULL);
+                    CoTaskMemFree(pszFilePath);
+                }
+                pItem->Release();
+            }
+        }
+        pFileOpen->Release();
+    }
+    
+    if (hr != RPC_E_CHANGED_MODE) CoUninitialize();
+    return result;
+}
+
+bool GUIManager::init() {
     if (!glfwInit()) return false;
     window = glfwCreateWindow(1280, 850, "RESEMBLE ENHANCE - ULTIMATE AUDIO SUITE", nullptr, nullptr);
     if (!window) return false;
