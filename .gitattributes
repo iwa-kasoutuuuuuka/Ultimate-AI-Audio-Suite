@@ -1,0 +1,9 @@
+# Mark Python source as vendored to exclude from language statistics
+src/** linguist-vendored
+scratch/** linguist-vendored
+requirements.txt linguist-vendored
+run.py linguist-vendored
+ResembleEnhance.spec linguist-vendored
+
+# Mark C++ source as the primary focus
+cpp_src/** linguist-language=C++

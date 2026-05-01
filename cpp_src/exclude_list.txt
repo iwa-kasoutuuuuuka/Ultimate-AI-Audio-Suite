@@ -1,0 +1,17 @@
+.git
+build_cpp
+models_onnx
+miniconda
+ffmpeg_dev
+packages
+build
+dist
+*.exe
+*.zip
+*.msi
+*.nupkg
+vcpkg_temp
+bin
+models
+hf_cache
+__pycache__

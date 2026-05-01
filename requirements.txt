@@ -1,0 +1,7 @@
+customtkinter==5.2.2
+tkinterdnd2==0.4.3
+torch
+torchaudio
+moviepy
+Pillow
+resemble-enhance

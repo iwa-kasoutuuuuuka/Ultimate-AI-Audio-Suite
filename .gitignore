@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Project Specific
+bin/
+models/
+models_onnx/
+packages/
+*.nupkg
+hf_cache/
+temp_*.wav
+enhanced_*.wav
+dist/
+build/
+build_cpp/
+build_final/
+build_gui/
+build_minimal/
+build_layout/
+python_dist/
+python_full/
+python_layout/
+python_nuget/
+ffmpeg_dev/
+miniconda/
+vcpkg_temp/
+*.spec
+*.zip
+*.exe
+*.msi
+
+# IDEs
+.vscode/
+.idea/
+.project
+.pydevproject
+
+# OS
+Thumbs.db
+Desktop.ini

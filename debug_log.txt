@@ -1,0 +1,7 @@
+=== Session Start ===
+[System] GUI initialized.
+[System] Loading AI models...
+[System] Models ready.
+[TEST] Browse button clicked - NO dialog opened.
+[Error] No path specified. Type a path first.
+[Error] No audio loaded.
