@@ -1,70 +1,54 @@
-# 💎 Ultimate AI Audio Suite - 取扱説明書 (User Manual)
+# 💎 Ultimate AI Audio Suite - 取扱説明書 / User Manual
 
 ![Project Banner](https://raw.githubusercontent.com/antigravity-ai/assets/main/banner.png)
 
-## 1. はじめに
+## 1. はじめに / Introduction
 **Ultimate AI Audio Suite** は、最先端の AI 音声高音質化技術「Resemble Enhance」を C++ でネイティブ実装した、プロフェッショナル向け音声処理アプリケーションです。
-ノイズ除去、音声の鮮明化、失われた周波数成分の復元を、爆速の GPU 加速環境で実現します。
+**Ultimate AI Audio Suite** is a professional-grade audio processing application that natively implements the state-of-the-art "Resemble Enhance" AI technology in C++.
 
 ---
 
-## 2. システム要件
+## 2. システム要件 / System Requirements
 *   **OS**: Windows 10 / 11 (64-bit)
-*   **GPU**: NVIDIA, AMD, Intel (DirectML 対応) ※GPU 使用を強く推奨
-*   **メモリ**: 8GB 以上 (16GB 以上推奨)
-*   **ディスク**: 約 2GB の空き容量 (AI モデルデータ用)
+*   **GPU**: NVIDIA, AMD, Intel (DirectML 対応 / DirectML Compatible)
+*   **メモリ / RAM**: 8GB+ (16GB+ 推奨 / Recommended)
+*   **ディスク / Disk**: ~2GB (AI モデル用 / For AI models)
 
 ---
 
-## 3. クイックスタート
-1.  `ResembleDebugV60.exe` を起動します。
-2.  **[Settings]** タブを開きます。
-3.  **[Setup AI Models]** ボタンをクリックし、AI モデルをダウンロードします（初回のみ）。
-4.  **[SINGLE]** タブに戻り、音声ファイルを読み込んで **[Enhance]** をクリックします。
+## 3. クイックスタート / Quick Start
+1.  `ResembleDebugV60.exe` を起動します。 / Launch `ResembleDebugV60.exe`.
+2.  **[Settings]** タブを開きます。 / Open the **[Settings]** tab.
+3.  **[Setup AI Models]** をクリックしてモデルを導入します。 / Click **[Setup AI Models]** to install models.
+4.  **[SINGLE]** タブで音声を読み込み **[Enhance]** を実行します。 / Load audio in the **[SINGLE]** tab and click **[Enhance]**.
 
 ---
 
-## 4. 機能解説
+## 4. 機能解説 / Feature Details
 
-### 🎙️ [SINGLE] タブ - 個別処理
-1つの音声ファイルを詳細に分析し、高音質化します。
-*   **Browse**: 処理したい音声ファイルを選択します。
-*   **Load**: ファイルを読み込み、波形とスペクトログラム（周波数分布）を表示します。
-*   **Enhance**: AI 処理を開始します。処理後は元の音声と処理後の音声を視覚的に比較できます。
+### 🎙️ [SINGLE] タブ - 個別処理 / Single Processing
+*   **Browse**: 音声ファイルを選択します。 / Select an audio file.
+*   **Load**: 波形とスペクトログラムを表示します。 / Visualize waveform and spectrogram.
+*   **Enhance**: AI 処理を開始します。 / Start AI processing.
 
-### 📦 [BATCH] タブ - 一括処理
-大量の音声ファイルを連続して自動処理します。
-*   **Add Queue**: 複数のファイルを選択してリストに追加します。
-*   **Start Batch**: 全てのファイルの一括処理を開始します。
-*   **出力**: 元のファイル名の末尾に `_enh.wav` が付与された状態で保存されます。
+### 📦 [BATCH] タブ - 一括処理 / Batch Processing
+*   **Add Queue**: 複数ファイルを追加します。 / Add multiple files.
+*   **Start Batch**: 全ファイルの一括処理を開始します。 / Process all files in bulk.
 
-### 🎧 [LIVE] タブ - リアルタイムモニター
-マイク入力をリアルタイムで確認します。
-*   **Start/Stop Monitor**: マイク入力を開始/停止します。
-*   **活用シーン**: 録音前の声質チェックや、マイクの設置位置確認などに利用できます。
-
-### ⚙️ [Settings] タブ - 各種設定
-*   **Denoise Strength**: ノイズ除去の強度を調整します。
-*   **GPU Acceleration**: チェックを入れると GPU を使用して高速処理を行います（推奨）。
-*   **Setup AI Models**: AI モデルが未インストールの場合や、再インストールしたい場合に使用します。
+### 🎧 [LIVE] タブ - リアルタイムモニター / Live Monitor
+*   マイク入力を低遅延で確認できます。 / Monitor microphone input with low latency.
 
 ---
 
-## 5. 視覚化ツールの見方
-*   **Waveform (波形)**: 音の大きさを時間軸で示します。
-*   **Spectrogram (スペクトログラム)**: 縦軸が周波数、横軸が時間を示します。色が明るいほどその周波数成分が強いことを意味し、AI がどのように高域を復元したかを確認できます。
+## 5. 設定 / Settings
+*   **Denoise Strength**: ノイズ除去の強度を調整します。 / Adjust the noise reduction strength.
+*   **GPU Acceleration**: GPU 加速を有効にします。 / Enable GPU acceleration.
 
 ---
 
-## 6. トラブルシューティング
-*   **「Setup AI Models」でエラーが出る**: インターネット接続を確認してください。
-*   **処理が遅い**: [Settings] で `GPU Acceleration` が有効になっているか確認してください。
-*   **音声が歪む**: `Denoise Strength` が高すぎる可能性があります。0.5 前後から調整してください。
-
----
-
-## 7. 免責事項
-本ソフトウェアは AI を用いた音声処理を行うものであり、元の音源の状態によっては期待通りの結果が得られない場合があります。重要なデータの処理前には必ずバックアップを作成してください。
+## 6. トラブルシューティング / Troubleshooting
+*   **処理が遅い / Slow Processing**: GPU 加速が有効か確認してください。 / Ensure GPU Acceleration is enabled.
+*   **モデルのエラー / Model Error**: インターネット接続を確認し、Setup を再試行してください。 / Check internet connection and retry Setup.
 
 ---
 Produced by **Antigravity AI**
