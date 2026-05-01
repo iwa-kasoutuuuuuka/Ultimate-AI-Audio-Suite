@@ -1,6 +1,6 @@
 # Resemble Enhance Native - Ultimate Audio Suite
 
-![Project Icon](cpp_src/resources/icon.ico)
+![Project Icon](assets/app_icon.png)
 
 ## 💎 究極の AI 音声プロセッシング・スイート
 
@@ -35,11 +35,14 @@ Resemble Enhance を C++ でフルスクラッチ再構築し、プロフェッ�
 *   **Audio I/O**: FFmpeg (File) / miniaudio (Real-time)
 *   **Build**: CMake / MSVC
 
-### 📦 インストールと使用方法
+### 📦 ドキュメント (Documentation)
+*   📖 [取扱説明書 (MANUAL_JA.md)](MANUAL_JA.md) - 一般ユーザー向けガイド
+*   🛠️ [技術仕様書 (SPECIFICATION_JA.md)](SPECIFICATION_JA.md) - モデルアーキテクチャと内部仕様
+*   📝 [開発記録 (WORK_LOG.md)](WORK_LOG.md) - プロジェクトの進捗とデバッグ記録
+
+### 🚀 使用方法
 1.  `build_cpp/Release/ResembleDebugV60.exe` を実行します。
 2.  「Settings」タブを開き、「Setup AI Models」をクリックしてモデルを自動インストールします。
-3.  詳細な操作方法は [取扱説明書 (MANUAL_JA.md)](MANUAL_JA.md) をご覧ください。
-4.  技術的な詳細は [技術仕様書 (SPECIFICATION_JA.md)](SPECIFICATION_JA.md) に記載されています。
 
 ---
 Produced by Antigravity AI
